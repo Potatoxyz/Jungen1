@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jungen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/swiper.js"></script>
+
+    <link rel="stylesheet" href="./css/style3.css">
+
+    <script src="js/jquery.js"></script>
+
+    <script src="js/Sweefty.js" type="text/javascript"></script>
+
+    <script src="js/moaModal.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        (function($){
+
+            var SW = Sweefty();
+
+            var scroll_options = {
+
+                speed : 250,
+
+                on : 'click',
+
+                easing : 'linear'
+
+            }
+
+
+
+            SW.trigger('scrollTo',function(ele,obj){
+
+
+
+                obj = $.extend({},scroll_options, obj);
+
+                var target = $(obj.scrollTo);
+
+                ele.on(obj.on,function(){
+
+                    $('body,html').animate({
+
+                        'scrollTop' : target.offset().top
+
+                    }, parseInt(obj.speed),obj.easing);
+
+                });
+
+            });
+
+
+
+        }(jQuery));
+
+    </script>
+</head>
+<body>
+<div class="head">
+    <img src="./img/JunagenLogo.png" alt="logo">
+</div>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide banner1"></div>
+        <div class="swiper-slide banner2"></div>
+        <div class="swiper-slide banner3"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+<div class="product-wrap">
+    <h1>Our Products</h1>
+    <div class="content">
+        <div class="item modal">
+            <div class="img-wrap">
+                <img src="./img/1.jpg" alt="1">
+            </div>
+        </div>
+        <div class="item modal">
+            <div class="img-wrap">
+                <img src="./img/2.jpg" alt="2">
+            </div>
+        </div>
+        <div class="item modal">
+            <div class="img-wrap">
+                <img src="./img/3.jpg" alt="3">
+            </div>
+        </div>
+        <div class="item modal">
+            <div class="img-wrap">
+                <img src="./img/4.jpg" alt="3">
+            </div>
+        </div>
+        <div class="item modal">
+            <div class="img-wrap">
+                <img src="./img/5.jpg" alt="3">
+            </div>
+        </div>
+        <div class="item modal">
+            <div class="img-wrap">
+                <img src="./img/6.jpg" alt="3">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>&copy;Copyright 2018 by Jungen</p>
+</div>
+<div id="demoModal1" class="block modal2">
+    <div class="modal-wrap" style="display: none;">
+        <span class="close" id="closeModal">X</span>
+        <h3 class="title"></h3>
+        <ul></ul>
+        <a id="buyLink" href="#" class="button green" target="_blank">BUY IT NOW !</a>
+    </div>
+</div>
+<script>
+    const productList=[
+        {id:1,title:'JUNGEN Waffle Baking Molds Bakeware Silicone Cake Mould Chocolate Pan Tray Mold Round',link:'https://www.amazon.co.uk/JUNGEN-Waffle-Bakeware-Silicone-Choc%20olate/dp/B06XGDH34D',des:['Material: Food grade silicone, Working temperature: -40 to 220 Celsius.','Novelty ice trays make great accessories for parties.']},
+
+        {id:2,title:'JUNGEN S Shaped Iron Plating Hanging Hooks Hangers For Kitchen Spoon Pan Pot Pack Of 10',link:'https://www.amazon.co.uk/JUNGEN-Plating-Hanging-Hangers-Kitchen/dp/B01D1FUE10',des:['Material:Iron; Size:Approx 6cm/2.4inches.','Material : Metal;Product Name : S Hook;Color : Silver Tone','Strong and reliable, Stylish for use in the kitchen etc.']},
+
+        {id:3,title:'JUNGEN Plastic 2 Grids Portable Outdoor Picnic Eggs Box Tray Carrier Container (Orange).',link:'https://www.amazon.co.uk/JUNGEN-Plastic-Portable-Outdoor-Container/dp/B01FHF1CB8/ref=sr_1_1?s=diy&ie=UTF8&qid=1523265007&sr=8-1&keywords=B01FHF1CB8',des:['The Perfect way to display and store your eggs keep them easy to hand.','Eco-friendly and reusable,easy clousure Protect eggs from broken.','Fit Egg Diameter :4cm;Case Size : 115x 70x 70mm / (L*T*H).']},
+
+        {id:4,title:'JUNGEN Rattles Sound Toys for Baby Over 6 Monthes Hand Training Toy for Baby',link:'https://www.amazon.co.uk/JUNGEN-Rattles-Sound-Monthes-Training/dp/B074Z7MSL8',des:['Made of environment-friendly wooden materials,safe for baby to play with.','Help to develop baby\' s color-shape recognition and cognitive competence..','Material: wood and alloy.']},
+
+        {id:5,title:'JUNGEN Leather Tissue Box Covers for Home and Office 14*13.5*13.5cm (Golden)',link:'https://www.amazon.co.uk/JUNGEN-Leather-Tissue-Covers-Office/dp/B01MXRKPLK',des:['Good quality, durable enough to use for a long time.','help to make your desk clean and tidy.','Suitable for home and office.','Size: 14*13.5*13.5cm.']},
+
+        {id:6,title:'JUNGEN Lovely Fruit Coasters for Drinks 7 Pieces/Set',link:'https://www.amazon.co.uk/JUNGEN-Lovely-Coasters-Drinks-Pieces/dp/B01M7VY8A7',des:['Fruit shape - decrote your table and make your mealtime more interesting.','Heat insulation - protect your table from damage.','Diameter: 9cm.']},
+
+    ];
+    $(document).ready(function(){
+        $('.modal').modal({
+            target : '#demoModal1',
+            speed : 500,
+            easing : 'easeInOutExpo',
+            animation : 'zoom',
+            position: '1% auto',
+            overlayClose : false
+        });
+        $('.modal').click(function () {
+            var id=$(this).find('img').attr('alt');
+            displayProductDetai(id);
+            setTimeout(function () {
+                $('.modal-wrap').fadeIn();
+            },1000);
+        });
+        $('#closeModal').click(function () {
+            $('#demoModal1').trigger('close.modal',modalCloseCb);
+        });
+        var modalCloseCb=function () {
+            console.log('cb');
+            $('.modal-wrap').prop('style','display: none;');
+        };
+        function displayProductDetai(id) {
+            $('.modal-wrap .title').text('');
+            $('.modal-wrap ul').empty();
+            $('#buyLink').attr('href','#');
+            var obj;
+            for(var i=0;i<productList.length;i++){
+                if(productList[i].id==id){
+                    obj=productList[i];
+                }
+            }
+            //console.log(obj);
+            if(obj){
+                $('.modal-wrap .title').text(obj.title);
+                obj.des.forEach(function (value,index) {
+                    $('<li>').text(value).appendTo($('.modal-wrap ul'));
+                });
+                $('#buyLink').attr('href',obj.link);
+            }
+        }
+    });
+
+</script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            loop:true,
+            autoplay: {
+                delay: 5000
+            },
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '"></span>';
+            }
+        }
+    });
+    swiper.autoplay.start();
+</script>
+</body>
+</html>
