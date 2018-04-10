@@ -73,7 +73,7 @@ body {
     top:0;
     width: 100%;
     z-index: 999;
-    background-color: #F8F4EE;
+    background-color: white;
 }
 .footer{
     line-height: 60px;
@@ -141,6 +141,9 @@ a.button{
     bottom:15px;
     left:50%;
     transform:translateX(-50%);
+}
+.swiper-slide{
+    cursor: pointer;
 }
 .green.button { -webkit-animation-name: greenPulse; -webkit-animation-duration: 3s;	-webkit-animation-iteration-count: infinite; }
 @-webkit-keyframes greenPulse {
